@@ -1,3 +1,4 @@
+// Package bootstrap 处理程序初始化逻辑
 package bootstrap
 
 import (
@@ -31,8 +32,9 @@ func registerGlobalMiddleWare(router *gin.Engine) {
 func setup404Handler(router *gin.Engine) {
 	// 处理404请求
 	router.NoRoute(func(c *gin.Context) {
-		// 获取标头信息的Accept信息
 
+		// 获取标头信息的Accept信息
+		// Accept描述了客户端希望服务器返回的响应body数据类型
 		acceptString := c.Request.Header.Get("Accept")
 		if strings.Contains(acceptString, "text/html") {
 
