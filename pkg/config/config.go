@@ -111,5 +111,3 @@ func GetString(path string, defaultValue ...interface{}) string {
 func GetInt(path string, defaultValue ...interface{}) int {
 	return cast.ToInt(internalGet(path, defaultValue...))
 }
-
-// fu

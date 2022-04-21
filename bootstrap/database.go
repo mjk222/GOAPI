@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/GOAPI/app/models/user"
 	"github.com/GOAPI/pkg/config"
 	"github.com/GOAPI/pkg/database"
 	"gorm.io/driver/mysql"
@@ -20,7 +21,8 @@ func SetupDB() {
 	switch config.Get("database.connection") {
 	case "mysql":
 		// 构建 DSN 信息
-		dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=%v&parseTime=True&multiStatements=true&loc=local", config.Get("database.mysql.username"), config.Get("database.mysql.password"), config.Get("databasse.mysql.host"), config.Get("database.mysql.post"), config.Get("database.mysql.database"), config.Get("database.mysql.charset"))
+		dsn := fmt.Sprintf("%v:%v@tcp(%v:%v)/%v?charset=%v&parseTime=True&multiStatements=true&loc=Local", config.Get("database.mysql.username"), config.Get("database.mysql.password"), config.Get("database.mysql.host"), config.Get("database.mysql.port"), config.Get("database.mysql.database"), config.Get("database.mysql.charset"))
+		fmt.Println("dsn is ", dsn)
 		dbConfig = mysql.New(mysql.Config{
 			DSN: dsn,
 		})
@@ -43,4 +45,7 @@ func SetupDB() {
 
 	// 设置每个连接的过期时间
 	database.SQLDB.SetConnMaxLifetime(time.Duration(config.GetInt("database.mysql.max_life_seconds")))
+
+	// 自动迁移功能
+	database.DB.AutoMigrate(&user.User{})
 }

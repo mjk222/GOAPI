@@ -9,7 +9,10 @@ require (
 	github.com/spf13/viper v1.10.1
 )
 
-require github.com/mattn/go-sqlite3 v1.14.12 // indirect
+require (
+	github.com/mattn/go-sqlite3 v1.14.12 // indirect
+	github.com/thedevsaddam/govalidator v1.9.10 // indirect
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect

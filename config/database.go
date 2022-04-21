@@ -7,7 +7,7 @@ func init() {
 		return map[string]interface{}{
 
 			// 默认数据库
-			"connection": config.Env("DB_CONNECTION", "mysql"),
+			"connection": config.Env("DB_CONNECTION", "goapi"),
 
 			// 数据库连接信息
 			"mysql": map[string]interface{}{
@@ -16,8 +16,8 @@ func init() {
 				"host":     config.Env("DB_HOST", "127.0.0.1"),
 				"port":     config.Env("DB_PORT", "3306"),
 				"database": config.Env("DB_DATABASE", "goapi"),
-				"username": config.Env("DB_USERNAME", ""),
-				"password": config.Env("DB_PASSWORD", ""),
+				"username": config.Env("DB_USERNAME", "root"),
+				"password": config.Env("DB_PASSWORD", "majikun@mysql1"),
 				"charset":  "utf8mb4",
 
 				// 连接池配置
