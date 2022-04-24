@@ -7,12 +7,10 @@ require github.com/gin-gonic/gin v1.7.7
 require (
 	github.com/spf13/cast v1.4.1
 	github.com/spf13/viper v1.10.1
+	github.com/thedevsaddam/govalidator v1.9.10
 )
 
-require (
-	github.com/mattn/go-sqlite3 v1.14.12 // indirect
-	github.com/thedevsaddam/govalidator v1.9.10 // indirect
-)
+require github.com/mattn/go-sqlite3 v1.14.12 // indirect
 
 require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
