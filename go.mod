@@ -10,7 +10,13 @@ require (
 	github.com/thedevsaddam/govalidator v1.9.10
 )
 
-require github.com/mattn/go-sqlite3 v1.14.12 // indirect
+require (
+	github.com/mattn/go-sqlite3 v1.14.12 // indirect
+	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.6.0 // indirect
+	go.uber.org/zap v1.21.0 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
+)
 
 require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
@@ -46,3 +52,5 @@ require (
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.4
 )
+
+

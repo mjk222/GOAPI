@@ -111,3 +111,8 @@ func GetString(path string, defaultValue ...interface{}) string {
 func GetInt(path string, defaultValue ...interface{}) int {
 	return cast.ToInt(internalGet(path, defaultValue...))
 }
+
+// GetBool获取 Bool 类型的配置信息
+func GetBool(path string, defaultValue ...interface{}) bool {
+	return cast.ToBool(internalGet(path, defaultValue...))
+}
